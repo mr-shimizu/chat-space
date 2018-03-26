@@ -61,7 +61,7 @@ html, body {
   width: calc(100% - 300px);
   height: 100%;
   position: relative;
-  background-color: $$color-bg-gray;
+  background-color: $color-bg-gray;
   float: right;
 }
 
@@ -119,8 +119,7 @@ html, body {
 }
 
 .lower-message {
-  @include text-format(
-    ,14px);
+  @include text-format($color-small-text-black,14px);
   margin-top: 10px;
   clear: both;
 }
