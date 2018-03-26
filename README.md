@@ -40,7 +40,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, index: true|
+|name|string|null: false, unique_index: true|
 |email|string|null: false|
 |password|string|null: false|
 
