@@ -67,7 +67,6 @@ _ has_many :groups, through: :members
 |------|----|-------|
 |message|text||
 |image|image||
-|date_time|datetime 'YYYY/MM/DD HH:MM:SS'|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
