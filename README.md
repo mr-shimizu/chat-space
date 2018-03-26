@@ -56,6 +56,7 @@ _ has_many :groups, through: :members
 |group_name|string|null: false|
 
 ### Association
+- has_many :users, through: :members
 - has_many :members
 - has_many :messages
 
