@@ -1,10 +1,17 @@
 %body
   .side-bar
     .side-header
-      .side-header__username seo
-      .side-header__icons
-        %i.fa.fa-edit.side-header__icons--icon
-        %i.fa.fa-cog.side-header__icons--icon
+      .side-header__username
+        = current_user.name
+      %ul.side-header__icons
+        %li.list
+          = link_to do
+            %i.fa.fa-edit.side-header__icons--icon
+        %li.list
+          = link_to edit_user_path(current_user) do
+            %i.fa.fa-cog.side-header__icons--icon
+
+
     .groups
       .group
         .group__name サンプルグループチャット1
