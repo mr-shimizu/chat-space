@@ -1,6 +1,8 @@
 @import "./reset";
 @import "./variable";
 @import "font-awesome";
+@import "./user.scss";
+@import "./flash.scss";
 
 html, body {
   height: 100%;
@@ -36,9 +38,15 @@ html, body {
     width: 36px;
     padding: 38px 0;
     float: right;
+    &--icon {
+      color: $color-text-white;
+    }
   }
 }
 
+.list {
+  display: inline-block;
+}
 
 .groups {
   height: calc(100% - 100px);
