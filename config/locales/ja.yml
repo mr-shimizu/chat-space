@@ -7,7 +7,14 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
-  date:
+    private_column:
+      activerecord:
+      models: モデル
+      attributes: アトリビュート
+      user: ユーザー
+      name: 名前
+      email: メールアドレス
+      date: 日付
     abbr_day_names:
     - 日
     - 月
