@@ -64,8 +64,8 @@ _ has_many :groups, through: :members
 
 |Column|Type|Options|
 |------|----|-------|
-|message|text||
-|image|image||
+|message|string||
+|image|string||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
