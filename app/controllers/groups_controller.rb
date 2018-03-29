@@ -28,11 +28,9 @@ class GroupsController < ApplicationController
   # PATCH/PUT /groups/1.json
   def update
       if @group.update(group_params)
-        format.html { redirect_to @group, notice: 'Group was successfully updated.' }
-        format.json { render :show, status: :ok, location: @group }
+        redirect_to @group, notice: 'グループを編集しました.'
       else
-        format.html { render :edit }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
+        render :edit
       end
   end
 
