@@ -1,12 +1,12 @@
 .chat-group-form
   %h1 チャットグループ編集
-  = form_for @group, html: {id: "edit_chat_group_22", class: "edit_chat_group"} do |f|
+  = form_for (@group) do |f|
     - if @group.errors.any?
       .chat-group-form__errors
         %h2= "#{@group.errors.full_messages.count}件のエラーが発生しました。"
         %ul
           - @group.errors.full_messages.each do |message|
-            %li message
+            %li= message
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         = f.label :name, "グループ名", class: "chat-group-form__label"
@@ -30,5 +30,6 @@
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
+        = f.collection_check_boxes :user_ids, User.all, :id, :name
         / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
         = f.submit "Save", class: "chat-group-form__action-btn"
