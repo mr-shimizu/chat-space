@@ -11,15 +11,12 @@
           = link_to edit_user_path(current_user) do
             %i.fa.fa-cog.side-header__icons--icon
 
-
     .groups
       .group
-        .group__name サンプルグループチャット1
-        .group__message よろしくお願いします。
-
-      .group
-        .group__name サンプルグループチャット1
-        .group__message よろしくお願いします。
+        - @groups.each do |group|
+          .group__name
+            = group.name
+          .group__message 仮のメッセージです。メッセージがないとき、メッセージはありませんと表示される。
 
   .chat
     .chat-header
