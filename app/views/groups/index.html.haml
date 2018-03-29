@@ -1,21 +1,22 @@
-%h1 Listing groups
+%body
+  .side-bar
+    .side-header
+      .side-header__username
+        = current_user.name
+      %ul.side-header__icons
+        %li.list
+          = link_to new_group_path do
+            %i.fa.fa-edit.side-header__icons--icon
+        %li.list
+          = link_to edit_user_path(current_user) do
+            %i.fa.fa-cog.side-header__icons--icon
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th
-      %th
-      %th
+    .groups
+      .group
+        - @groups.each do |group|
+          .group__name
+            = group.name
+          .group__message 仮のメッセージです。メッセージがないとき、メッセージはありませんと表示される。
 
-  %tbody
-    - @groups.each do |group|
-      %tr
-        %td= group.name
-        %td= link_to 'Show', group
-        %td= link_to 'Edit', edit_group_path(group)
-        %td= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Group', new_group_path
+  - if @group
+    = render "chat"
