@@ -1,9 +1,9 @@
 class MessagesController < ApplicationController
 
-  mount_uploader :image, ImageUploader
 
   def index
-    @messages = Message.all
+    @group = Group.find(params[:group_id])
+    @message = Message.new
   end
 
   def create
@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:name, :image, :group_id, :user_id)
+    params.require(:message).permit(:name, :image, :group_id, :user_id, :image_cache)
   end
 
 end
