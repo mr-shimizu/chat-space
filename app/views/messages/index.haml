@@ -38,10 +38,12 @@
           メッセージ
 
   .footer
-    %form.form{action: "./", method: "get"}
-      %input.form__text{type: "text", placeholder: "type a message"}
-        .image-button
-          %label
-            %i.fa.fa-picture-o.fa-lg
-            %input.image-button__image{type: "file", name: "img", style: "display: none"}
-      %input.form__submit{type: "submit", value: "Send"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: "form__text", placeholder: "type a message"
+      .image-button
+        = f.label :image, style: "display: none"
+        %i.fa.fa-picture-o.fa-lg
+        = f.file_field :image, class: "image-button__image", style: "display: none"
+        / = f.hidden_field :image_cache
+      = f.submit "Send", class: "form__submit"
+
