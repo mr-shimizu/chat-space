@@ -110,14 +110,15 @@ html, body {
 
 .messages {
   height: calc(100% - 100px - 90px);
-  padding: 6px 40px 0;
+  padding: 46px 40px 0;
   border-top: thin solid $color-border-gray;
   background-color: AntiqueWhite; /*仮の色*/
   overflow: scroll;
+  box-sizing: border-box;
 }
 
 .message {
-  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .upper-message {
