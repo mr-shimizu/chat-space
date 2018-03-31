@@ -93,6 +93,9 @@ html, body {
   &__members {
     @include text-format($color-text-gray, 12px);
     margin-top: 15px;
+    &_member{
+      display: inline-block;
+    }
   }
 }
 
