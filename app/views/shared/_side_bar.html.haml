@@ -15,4 +15,10 @@
       - current_user.groups.each do |group|
         .group__name
           = group.name
-        .group__message 仮のメッセージです。メッセージがないとき、メッセージはありませんと表示される。
+        .group__message
+          -if group.messages.max.content != ""
+            = group.messages.max.content
+          -elsif group.messages.max.image.url
+            = "画像メッセージです。"
+          -else
+            = "メッセージはありません。"
