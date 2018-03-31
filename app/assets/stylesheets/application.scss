@@ -1,20 +1,21 @@
 @import "./reset";
+@import "./mixin";
 @import "./variable";
-@import "./flash.scss";
 @import "font-awesome";
+@import "./flash.scss";
 @import "./user.scss";
 @import "./group.scss";
 @import "./side_bar.scss";
-@import "./message.scss";
 @import "./messages_index";
 @import "./groups_index";
-@import "./mixin";
+@import "./message.scss";
 
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
+
 
 
 
