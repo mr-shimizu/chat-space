@@ -16,9 +16,4 @@
         .group__name
           = group.name
         .group__message
-          -if group.messages.max.content != ""
-            = group.messages.max.content
-          -elsif group.messages.max.image.url
-            = "画像メッセージです。"
-          -else
-            = "メッセージはありません。"
+          = group.show_last_message
