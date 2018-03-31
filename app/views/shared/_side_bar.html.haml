@@ -1,0 +1,18 @@
+.side-bar
+  .side-header
+    .side-header__username
+      = current_user.name
+    %ul.side-header__icons
+      %li.list
+        = link_to new_group_path do
+          %i.fa.fa-edit.side-header__icons_icon
+      %li.list
+        = link_to edit_user_path(current_user) do
+          %i.fa.fa-cog.side-header__icons_icon
+
+  .groups
+    .group
+      - @groups.each do |group|
+        .group__name
+          = group.name
+        .group__message 仮のメッセージです。メッセージがないとき、メッセージはありませんと表示される。
