@@ -3,14 +3,17 @@ before_action :set_group
 
   def index
     @message = Message.new
+    @messages = @group.messages.includes(:user)
   end
 
   def create
-    @message = Message.create(message_params)
-    if @message.save(message_params)
-      redirect_to group_messages_path
+    @message = @group.messages.new(message_params)
+    if @message.save
+      redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'
     else
-      redirect_to group_messages_path, alert: "空のメッセージは保存されません"
+      @messages = @group.messages.includes(:user)
+      flash.now[:alert] = "メッセージを入力してください"
+      render index
     end
   end
 
