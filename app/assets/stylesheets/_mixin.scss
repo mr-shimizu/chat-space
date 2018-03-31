@@ -1,0 +1,4 @@
+@mixin text-format($color: #fff, $fSize: 16px) {
+  color: $color;
+  font-size: $fSize;
+}

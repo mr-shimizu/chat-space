@@ -4,182 +4,18 @@
 @import "font-awesome";
 @import "./user.scss";
 @import "./group.scss";
+@import "./side_bar.scss";
+@import "./message.scss";
+@import "./messages_index";
+@import "./groups_index";
+@import "./mixin";
 
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
-@mixin text-format($color: #fff, $fSize: 16px) {
-  color: $color;
-  font-size: $fSize;
-}
 
-.wrapper {
-  height: 100%;
-}
 
-.side-bar {
-  height: 100%;
-  width: 300px;
-  color: $color-text-white;
-  background-color: $color-bg-darkblue-darken;
-  float:left;
-}
 
-.side-header{
-  height: 100px;
-  padding: 0 20px;
 
-  &__username {
-    @include text-format($color-text-white,);
-    vertical-align: middle;
-    display: table-cell;
-    padding: 38px 0;
-    font-weight: bold;
-    float: left;
-  }
-  &__icons {
-    width: 36px;
-    padding: 38px 0;
-    float: right;
-    &_icon {
-      color: $color-text-white;
-    }
-  }
-}
-
-.list {
-  display: inline-block;
-}
-
-.groups {
-  height: calc(100% - 100px);
-  padding: 0 20px;
-  background-color: $color-bg-darkblue;
-}
-
-.group {
-  padding: 20px 0 20px;
-  &__name{
-    font-size: 15px;
-  }
-  &__message{
-    margin-top: 5px;
-    font-size: 11px;
-  }
-}
-
-.chat {
-  width: calc(100% - 300px);
-  height: 100%;
-  position: relative;
-  background-color: $color-bg-gray;
-  float: right;
-}
-
-.chat-header {
-  height: 100px;
-  padding: 0 40px;
-  background-color: PaleGoldenrod;  /*仮の色*/
-}
-
-.left-header {
-  float: left;
-  &__title {
-    @include text-format($color-large-text-black, 20px);
-    margin-top: 35px;
-  }
-  &__members {
-    @include text-format($color-text-gray, 12px);
-    margin-top: 15px;
-    &_member{
-      display: inline-block;
-    }
-  }
-}
-
-.right-header {
-  height: 40px;
-  margin: 28px 0 0;
-  border: 1px;
-  border-style: solid;
-  padding: 0 20px;
-  line-height: 38px;
-  color: $color-light-blue;
-  border-color: $color-light-blue;
-  float:right;
-}
-
-.messages {
-  height: calc(100% - 100px - 90px);
-  padding: 46px 40px 0;
-  border-top: thin solid $color-border-gray;
-  background-color: AntiqueWhite; /*仮の色*/
-  overflow: scroll;
-  box-sizing: border-box;
-}
-
-.message {
-  margin-bottom: 40px;
-}
-
-.upper-message {
-  &__user-name{
-    @include text-format($color-small-text-black,);
-    font-weight: bold;
-    float: left;
-  }
-  &__date{
-    @include text-format($color-text-gray,12px);
-    margin-left: 10px;
-    float: left;
-  }
-}
-
-.lower-message {
-  @include text-format($color-small-text-black,14px);
-  margin-top: 10px;
-  clear: both;
-}
-
-.footer{
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  box-sizing: border-box;
-  padding: 20px 40px;
-  background-color: grey;  /*仮の色*/
-}
-
-.form{
-  height: 50px;
-  &__text{
-    @include text-format($color-small-text-black,);
-    height: 50px;
-    width: calc(100% - 150px);
-    box-sizing: border-box;
-    border: none;
-    padding: 0 10px;
-    float: left;
-  }
-  &__submit {
-    height: 50px;
-    padding: 0 30px;
-    border-style: none;
-    margin-left: 15px;
-    color: #fff; /*仮の色*/
-    background-color: $color-light-blue;
-    float: right;
-  }
-}
-
-.image-button {
-  height: 50px;
-  padding-right: 10px;
-  line-height: 50px;
-  background-color: #fff; /*仮の色*/
-  float:left;
-  &__image {
-  }
-}
