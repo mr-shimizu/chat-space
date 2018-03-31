@@ -41,10 +41,7 @@
   .footer
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: "form__text", placeholder: "type a message"
-      .image-button
-        = f.label :image, style: "display: none"
-        %i.fa.fa-picture-o.fa-lg
+      %label.image-button
         = f.file_field :image, class: "image-button__image", style: "display: none"
-        / = f.hidden_field :image_cache
+        %i#message_image.fa.fa-picture-o.fa-lg
       = f.submit "Send", class: "form__submit"
-
