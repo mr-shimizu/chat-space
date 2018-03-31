@@ -1,0 +1,24 @@
+= render "shared/side_bar"
+.chat
+  .chat-header
+    .left-header
+      .left-header__title
+        = @group.name
+      %ul.left-header__members
+        = "Members :"
+        - @group.users.each do |user|
+          %li.left-header__members_member
+            = "#{user.name} "
+    .right-header
+      Edit
+  .messages
+    /# collectionでインスタンスの要素の分だけテンプレートを引き出す。同じメッセージで、複数形、テンプレートファイルは単数系なので、下記のように記述を省略できる。
+    = render @messages
+
+  .footer
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: "form__text", placeholder: "type a message"
+      %label.image-button
+        = f.file_field :image, class: "image-button__image", style: "display: none"
+        %i#message_image.fa.fa-picture-o.fa-lg
+      = f.submit "Send", class: "form__submit"
