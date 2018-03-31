@@ -1,0 +1,50 @@
+.side-bar {
+  height: 100%;
+  width: 300px;
+  color: $color-text-white;
+  background-color: $color-bg-darkblue-darken;
+  float:left;
+}
+
+.side-header{
+  height: 100px;
+  padding: 0 20px;
+
+  &__username {
+    @include text-format($color-text-white,);
+    vertical-align: middle;
+    display: table-cell;
+    padding: 38px 0;
+    font-weight: bold;
+    float: left;
+  }
+  &__icons {
+    width: 36px;
+    padding: 38px 0;
+    float: right;
+    &_icon {
+      color: $color-text-white;
+    }
+  }
+}
+
+.list {
+  display: inline-block;
+}
+
+.groups {
+  height: calc(100% - 100px);
+  padding: 0 20px;
+  background-color: $color-bg-darkblue;
+}
+
+.group {
+  padding: 20px 0 20px;
+  &__name{
+    font-size: 15px;
+  }
+  &__message{
+    margin-top: 5px;
+    font-size: 11px;
+  }
+}

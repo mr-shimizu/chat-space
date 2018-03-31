@@ -1,0 +1,22 @@
+.message {
+  margin-bottom: 40px;
+}
+
+.upper-message {
+  &__user-name{
+    @include text-format($color-small-text-black,);
+    font-weight: bold;
+    float: left;
+  }
+  &__date{
+    @include text-format($color-text-gray,12px);
+    margin-left: 10px;
+    float: left;
+  }
+}
+
+.lower-message {
+  @include text-format($color-small-text-black,14px);
+  margin-top: 10px;
+  clear: both;
+}
