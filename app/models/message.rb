@@ -3,5 +3,11 @@ class Message < ApplicationRecord
   belongs_to :group
 
   mount_uploader :image, ImageUploader
-  validates :content || :image, presence: true
+
+  validates :content_or_image, presence: true
+
+  def content_or_image
+    content.presence or image.presence
+  end
+
 end
