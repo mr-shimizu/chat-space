@@ -12,7 +12,7 @@
 
   .groups
     .group
-      - @groups.each do |group|
+      - current_user.groups.each do |group|
         .group__name
           = group.name
         .group__message 仮のメッセージです。メッセージがないとき、メッセージはありませんと表示される。
