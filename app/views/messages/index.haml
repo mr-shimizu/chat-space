@@ -7,36 +7,16 @@
     .right-header
       Edit
   .messages
-
-    .message
-      .upper-message
-        .upper-message__user-name
-          ユーザー名
-        .upper-message__date
-          ポストされた日付
-      .lower-message
-        .lower-message__text
-          メッセージ
-
-    .message
-      .upper-message
-        .upper-message__user-name
-          ユーザー名
-        .upper-message__date
-          ポストされた日付
-      .lower-message
-        .lower-message__text
-          メッセージ
-
-    .message
-      .upper-message
-        .upper-message__user-name
-          ユーザー名
-        .upper-message__date
-          ポストされた日付
-      .lower-message
-        .lower-message__text
-          メッセージ
+    - @messages.order(created_at: "ASC").each do |message|
+      .message
+        .upper-message
+          .upper-message__user-name
+            = message.user.name
+          .upper-message__date
+            = message.created_at.strftime('%Y/%m/%d %H:%M')
+        .lower-message
+          .lower-message__text
+            = message.content
 
   .footer
     = form_for [@group, @message] do |f|
