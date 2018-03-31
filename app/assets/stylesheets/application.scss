@@ -15,6 +15,10 @@ html, body {
   font-size: $fSize;
 }
 
+.wrapper {
+  height: 100%;
+}
+
 .side-bar {
   height: 100%;
   width: 300px;
@@ -39,7 +43,7 @@ html, body {
     width: 36px;
     padding: 38px 0;
     float: right;
-    &--icon {
+    &_icon {
       color: $color-text-white;
     }
   }
