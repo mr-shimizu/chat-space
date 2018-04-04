@@ -29,6 +29,14 @@ require 'rspec/rails'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+ # User Devise test_helper under test controller
+  config.include Devise::Test::ControllerHelpers, type: :controller
+
+  # Use macros under test controller
+  config.include ControllerMacros, type: :controller
+
   # Omit Syntax of FactoryGirl
   config.include FactoryGirl::Syntax::Methods
 
