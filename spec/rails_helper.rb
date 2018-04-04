@@ -29,6 +29,13 @@ require 'rspec/rails'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+
+ # User Devise test_helper under test controller
+  config.include Devise::TestHelpers, type: :controller
+
+  # Use macros under test controller
+  config.include ControllerMacros, type: :controller
+
   # Omit Syntax of FactoryGirl
   config.include FactoryGirl::Syntax::Methods
 
@@ -60,3 +67,9 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+
+  #devise is needed to test user controller
+  require 'devise'
+
+  #File about log_in by devise
+  require File.expand_path("spec/support/controller_macros.rb")
