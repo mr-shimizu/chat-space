@@ -30,8 +30,9 @@ ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
 
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
  # User Devise test_helper under test controller
-  config.include Devise::TestHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :controller
 
   # Use macros under test controller
   config.include ControllerMacros, type: :controller
@@ -67,9 +68,3 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
-
-  #devise is needed to test user controller
-  require 'devise'
-
-  #File about log_in by devise
-  require File.expand_path("spec/support/controller_macros.rb")
