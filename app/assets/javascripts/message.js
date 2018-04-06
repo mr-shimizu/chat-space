@@ -8,8 +8,15 @@ $(function(){
       type: "POST",
       data: formData,
       dataType: 'json',
-      contentType: false,
-      processData: false
+      processData: false,
+      contentType: false
+    })
+    .done(function(data){
+      var html = buildHTML(data);
+      $(".messages").append(html)
+      $(".form__text").val('')
+      $('.messages').animate({scrollTop: $(".messages").scrollTop()+$("#scroll-bottom").position().top}), 200, 'swing';
+
     })
   });
 });
