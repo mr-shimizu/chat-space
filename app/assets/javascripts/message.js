@@ -18,5 +18,9 @@ $(function(){
       $('.messages').animate({scrollTop: $(".messages").scrollTop()+$("#scroll-bottom").position().top}), 200, 'swing';
 
     })
+    .fail(function(){
+      alert('error');
+    })
+    return false;
   });
 });
