@@ -35,6 +35,7 @@ $(function(){
       var html = buildHTML(data);
       $(".messages").append(html)
       $(".form__text").val('')
+      $(".image-button__image").val('')
       $('.messages').animate({scrollTop: $(".messages").scrollTop()+$("#scroll-bottom").position().top}), 200, 'swing';
 
     })
