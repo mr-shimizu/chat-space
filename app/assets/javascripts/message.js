@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message){
-    var html =  `<div id="scroll-bottom" class="message">
+    var html =  `<div class= "message">
                   <div class="upper-message">
                     <div class="upper-message__user-name">
                       ${message.name}
@@ -33,10 +33,10 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.messages').animate({scrollTop: $(".messages").scrollTop()+$("#scroll-bottom").position().top}), 200, 'swing';
       $(".messages").append(html);
       $(".form__text").val('');
       $(".image-button__image").val('');
+      $('.messages').animate({scrollTop: $(".messages").scrollTop()+$('.message').last().position().top}), 200, 'swing';
     })
     .fail(function(){
       alert('error');
