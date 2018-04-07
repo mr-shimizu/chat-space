@@ -1,5 +1,8 @@
 $(function(){
   function buildHTML(message){
+    if (message.image.precence?){
+      var image = '<img src="${message.image}"/>';
+    }
     var html =  `<div class= "message">
                   <div class="upper-message">
                     <div class="upper-message__user-name">
@@ -11,9 +14,9 @@ $(function(){
                   </div>
                   <div class="lower-message">
                     <div class="lower-message__text">
-                      ${message.content}<br>
-                      <img src="${message.image}">
-                    </div>
+                      ${message.content}<br>`
+                      + image +
+                    `</div>
                   </div>
                 </div>`
     return html;
