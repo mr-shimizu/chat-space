@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message){
-    var imagehtml = ((message.image)
+    var imageHtml = ((message.image)
       ? (`<img src="${message.image}"/>`)
       : ("")
     );
@@ -16,7 +16,7 @@ $(function(){
                   <div class="lower-message">
                     <div class="lower-message__text">
                       ${message.content}<br>
-                      ${imagehtml}
+                      ${imageHtml}
                     </div>
                   </div>
                 </div>`
