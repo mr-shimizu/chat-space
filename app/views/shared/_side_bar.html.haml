@@ -11,9 +11,10 @@
           %i.fa.fa-cog.side-header__icons_icon
 
   .groups
-    .group
-      - current_user.groups.each do |group|
-        .group__name
-          = group.name
-        .group__message
-          = group.show_last_message
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group.id) do
+        .group
+          .group__name
+            = group.name
+          .group__message
+            = group.show_last_message

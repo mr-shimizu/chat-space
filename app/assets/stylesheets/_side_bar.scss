@@ -41,10 +41,10 @@
 .group {
   padding: 20px 0 20px;
   &__name{
-    font-size: 15px;
+    @include text-format($color-text-white,15px);
   }
   &__message{
+    @include text-format($color-text-white,11px);
     margin-top: 5px;
-    font-size: 11px;
   }
 }

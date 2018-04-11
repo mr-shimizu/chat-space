@@ -9,10 +9,11 @@
         - @group.users.each do |user|
           %li.left-header__members_member
             = "#{user.name} "
-    .right-header
-      Edit
+    =link_to edit_group_path(@group.id) do
+      .right-header
+        Edit
   .messages
-    /# collectionでインスタンスの要素の分だけテンプレートを引き出す。同じメッセージで、複数形、テンプレートファイルは単数系なので、下記のように記述を省略できる。
+    /# 本来はcollectionを使ってインスタンスの要素の分だけテンプレートを引き出す。同じメッセージで、複数形、テンプレートファイルは単数系なので、下記のように記述を省略できる。
     = render @messages
 
   .footer
