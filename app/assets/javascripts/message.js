@@ -43,7 +43,7 @@ $(function(){
       $('.messages').animate({scrollTop: $(".messages").scrollTop()+$('.message').last().position().top}), 200, 'swing';
     })
     .fail(function(){
-      alert('error');
+      alert('メッセージまたは画像を投稿してください。');
     })
     return false;
   });
