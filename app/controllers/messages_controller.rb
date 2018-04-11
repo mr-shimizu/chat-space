@@ -7,10 +7,14 @@ before_action :set_group
   end
 
   def create
-    @message = @group.messages.create(message_params)
-    respond_to do |format|
-      format.html { redirect_to group_messages_path(@group)}
-      format.json
+    @message = @group.messages.new(message_params)
+    if @message.save
+      respond_to do |format|
+        format.html { redirect_to group_messages_path(@group)}
+        format.json
+      end
+    else
+      redirect_to group_messages_path(@group)
     end
   end
 
