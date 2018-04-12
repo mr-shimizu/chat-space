@@ -1,6 +1,6 @@
 $(function(){
   var user_list = $('#user-search-result')
-
+  var user_field = $("#user-search-field")
   function appendUser(user){
     var html = `<div class="chat-group-user clearfix">
                 <p class="chat-group-user__name">${user.name}</p>
@@ -9,8 +9,8 @@ $(function(){
     user_list.append(html);
   }
 
-  $("#user-search-field").on("keyup", function(){
-    var input = $("#user-search-field").val();
+  user_field.on("keyup", function(){
+    var input = user_field.val();
     $.ajax({
       type: 'GET',
       url: '/users',
