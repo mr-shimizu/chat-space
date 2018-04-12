@@ -1,4 +1,5 @@
 $(function(){
+  var user_list = $('#user-search-result')
   $("#user-search-field").on("keyup", function(){
     var input = $("#user-search-field").val();
     $.ajax({
@@ -8,6 +9,7 @@ $(function(){
       dataType: 'json'
     })
     .done(function(users){
+      user_list.empty();
       if (users.length !== 0) {
        users.forEach(function(user){
        });
