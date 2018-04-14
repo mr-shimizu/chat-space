@@ -22,6 +22,10 @@ $(document).on("turbolinks:load", function(){
 
   user_field.on("keyup", function(){
     var input = user_field.val();
+    if (input.length === 0) {
+      user_list.empty();
+      return false;
+    };
     $.ajax({
       type: 'GET',
       url: '/users',
