@@ -1,6 +1,6 @@
-$(function(){
   var user_list = $('#user-search-result')
   var user_field = $("#user-search-field")
+$(document).on("turbolinks:load", function(){
   var group_user_list = $('#chat-group-users');
   function appendUser(user){
     var html = `<div class="chat-group-user clearfix">
