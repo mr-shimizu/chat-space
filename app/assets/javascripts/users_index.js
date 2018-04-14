@@ -34,8 +34,8 @@ $(document).on("turbolinks:load", function(){
     })
     .done(function(users){
       user_list.empty();
-     users.forEach(function(user){
-       appendUser(user);
+      users.forEach(function(user){
+      appendUser(user);
      });
     })
     .fail(function(){
