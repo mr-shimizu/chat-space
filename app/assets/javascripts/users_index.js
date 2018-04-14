@@ -1,6 +1,7 @@
 $(function(){
   var user_list = $('#user-search-result')
   var user_field = $("#user-search-field")
+  var group_user_list = $('#chat-group-users');
   function appendUser(user){
     var html = `<div class="chat-group-user clearfix">
                 <p class="chat-group-user__name">${user.name}</p>
@@ -28,5 +29,12 @@ $(function(){
     .fail(function(){
       alert("ユーザー検索に失敗しました")
     })
+  });
+  user_list.on("click", '.chat-group-user__btn--add', function(){
+    user = {};
+    user.id = $(this).data('user-id');
+    user.name = $(this).data('user-name');
+    $(this).parent().remove();
+    appendGroupUser(user);
   });
 });
