@@ -45,4 +45,7 @@ $(function(){
     $(this).parent().remove();
     appendGroupUser(user);
   });
+  group_user_list.on("click", '.js-remove-btn', function(){
+    $(this).parent().remove();
+  });
 });
