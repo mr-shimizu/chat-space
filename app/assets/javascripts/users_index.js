@@ -24,7 +24,6 @@ $(function(){
          appendUser(user);
        });
      }
-      // usersは配列オブジェクト,中にはハッシュオブジェクト[{id: , name:}, {id: , name:}, {id: , name:}]。ただし、usersからuserを取り出した後はuser.id, user.nameで出来る。
     })
     .fail(function(){
       alert("ユーザー検索に失敗しました")
