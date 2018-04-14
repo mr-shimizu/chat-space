@@ -30,11 +30,9 @@ $(document).on("turbolinks:load", function(){
     })
     .done(function(users){
       user_list.empty();
-      if (users.length !== 0) {
-       users.forEach(function(user){
-         appendUser(user);
-       });
-     }
+     users.forEach(function(user){
+       appendUser(user);
+     });
     })
     .fail(function(){
       alert("ユーザー検索に失敗しました");
