@@ -44,7 +44,7 @@ $(document).on("turbolinks:load", function(){
   });
 
   userList.on("click", '.chat-group-user__btn--add', function(){
-    user = {};
+    let user = {};
     user.id = $(this).data('user-id');
     user.name = $(this).data('user-name');
     $(this).parent().remove();
