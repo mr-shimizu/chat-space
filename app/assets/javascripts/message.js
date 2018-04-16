@@ -1,4 +1,6 @@
 $(function(){
+  let seconds = 2
+  let messagesDiv = $('.messages')
 
   function buildHTML(message){
     let imageHtml = ((message.image)
