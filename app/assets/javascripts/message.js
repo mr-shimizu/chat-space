@@ -40,10 +40,10 @@ $(function(){
     })
     .done(function(data){
       let html = buildHTML(data);
-      $(".messages").append(html);
+      messagesDiv.append(html);
       $(".form__text").val('');
       $(".image-button__image").val('');
-      $('.messages').animate({scrollTop: $(".messages").scrollTop()+$('.message').last().position().top}), 200, 'swing';
+      messagesDiv.animate({scrollTop: messagesDiv.scrollTop()+$('.message').last().position().top}), 200, 'swing';
     })
     .fail(function(){
       alert('メッセージまたは画像を投稿してください。');
