@@ -58,7 +58,16 @@ $(function(){
     })
     .done(function(data) {
       let latestId = $('.message').last().data("messageId");
+      let insertHTML = "";
+      data.messages.forEach(function(message){
+        if (message.id > latestId) {
+          insertHTML += buildHTML(message);
+        }
+      });
+        messagesDiv.append(insertHTML);
+    })
     .fail(function(data) {
+      alert('自動更新に失敗しました');
     });
   } else {
     clearInterval(interval);
