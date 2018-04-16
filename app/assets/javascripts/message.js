@@ -7,7 +7,7 @@ $(function(){
       ? (`<img src="${message.image}"/>`)
       : ("")
     );
-    let html =  `<div class= "message">
+    let html =  `<div class= "message" data-message-id="${message.id}">
                   <div class="upper-message">
                     <div class="upper-message__user-name">
                       ${message.name}
@@ -57,6 +57,7 @@ $(function(){
       dataType: 'json',
     })
     .done(function(data) {
+      let latestId = $('.message').last().data("messageId");
     .fail(function(data) {
     });
   } else {
