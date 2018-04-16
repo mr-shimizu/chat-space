@@ -64,7 +64,8 @@ $(function(){
           insertHTML += buildHTML(message);
         }
       });
-        messagesDiv.append(insertHTML);
+      messagesDiv.append(insertHTML);
+      messagesDiv.animate({scrollTop: messagesDiv.scrollTop()+$('.message').last().position().top}), 200, 'swing';
     })
     .fail(function(data) {
       alert('自動更新に失敗しました');
