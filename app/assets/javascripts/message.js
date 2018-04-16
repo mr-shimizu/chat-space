@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function() {
   let seconds = 2
   let messagesDiv = $('.messages')
 
