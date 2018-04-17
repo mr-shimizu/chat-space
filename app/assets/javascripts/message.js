@@ -52,18 +52,17 @@ $(document).on('turbolinks:load', function() {
   });
 
   let interval = setInterval(function() {
+    let latestId = $('.message').last().data("messageId");
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
     $.ajax({
       url: location.href,
+      data: { latest_id: latestId },
       dataType: 'json',
     })
     .done(function(data) {
-      let latestId = $('.message').last().data("messageId");
       let insertHTML = "";
       data.messages.forEach(function(message){
-        if (message.id > latestId) {
-          insertHTML += buildHTML(message);
-        }
+        insertHTML += buildHTML(message);
       });
       messagesDiv.append(insertHTML);
       messagesDiv.animate({scrollTop: messagesDiv.scrollTop()+$('.message').last().position().top}), 200, 'swing';
