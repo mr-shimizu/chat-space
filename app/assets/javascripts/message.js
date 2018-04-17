@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() {
-  let seconds = 2
+  let SECOND = 2000
   let messagesDiv = $('.messages')
 
   function buildHTML(message){
@@ -72,5 +72,5 @@ $(document).on('turbolinks:load', function() {
     });
   } else {
     clearInterval(interval);
-  }}, seconds * 1000);
+  }}, SECOND);
 });
