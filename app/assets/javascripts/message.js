@@ -56,7 +56,7 @@ $(document).on('turbolinks:load', function() {
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
     $.ajax({
       url: location.href,
-      data: { latest_id: latestId },
+      data: { id: latestId },
       dataType: 'json',
     })
     .done(function(data) {

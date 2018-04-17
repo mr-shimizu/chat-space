@@ -4,7 +4,7 @@ before_action :set_group
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
-    @new_messages = @messages.where("id > ?", params[:latest_id].to_i)
+    @new_messages = @messages.where("id > ?", params[:id])
     respond_to do |format|
       format.html
       format.json
