@@ -1,17 +1,16 @@
 .side-bar {
   height: 100%;
   width: 300px;
-  color: $color-text-white;
-  background-color: $color-bg-darkblue-darken;
   float:left;
 }
 
 .side-header{
   height: 100px;
   padding: 0 20px;
+  background-color: $darkbrown;
 
   &__username {
-    @include text-format($color-text-white,);
+    @include text-format($orange,);
     vertical-align: middle;
     display: table-cell;
     padding: 38px 0;
@@ -23,7 +22,7 @@
     padding: 38px 0;
     float: right;
     &_icon {
-      color: $color-text-white;
+      color: $orange;
     }
   }
 }
@@ -33,18 +32,23 @@
 }
 
 .groups {
-  height: calc(100% - 100px);
+  height: calc(100% - 120px);
   padding: 0 20px;
-  background-color: $color-bg-darkblue;
+  padding-top: 20px;
+  background-color: $brown;
 }
-
 .group {
-  padding: 20px 0 20px;
+  margin-bottom: 20px;
+  padding-left: 5px;
+  background-color: $leafgreen;
+  border-radius: 15px 5px 25px 5px;
+  border: double $orange;
+
   &__name{
-    @include text-format($color-text-white,15px);
+    @include text-format($darkgreen,15px);
   }
   &__message{
-    @include text-format($color-text-white,11px);
+    @include text-format($darkgreen,11px);
     margin-top: 5px;
   }
 }
