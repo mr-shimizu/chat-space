@@ -4,19 +4,19 @@
 
 .upper-message {
   &__user-name{
-    @include text-format($color-small-text-black,);
+    @include text-format($spinachgreen,);
     font-weight: bold;
     float: left;
   }
   &__date{
-    @include text-format($color-text-gray,12px);
+    @include text-format($yellowgreen,12px);
     margin-left: 10px;
     float: left;
   }
 }
 
 .lower-message {
-  @include text-format($color-small-text-black,14px);
+  @include text-format($spinachgreen,14px);
   margin-top: 10px;
   clear: both;
 }
