@@ -10,6 +10,7 @@
           - @group.users.each do |user|
             %li.left-header__members_member
               = "#{user.name} "
+      %div=link_to 'Delete', group_message_path(@group.id, @messages), method: :delete, confirm: 'Are you sure?', class: "delete-header"
       =link_to edit_group_path(@group.id) do
         .right-header
           Edit

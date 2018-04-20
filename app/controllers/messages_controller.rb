@@ -23,6 +23,11 @@ before_action :set_group
     end
   end
 
+  def destroy
+    @group.messages.destroy_all
+    redirect_to group_messages_path(@group)
+  end
+
   private
 
   def message_params
