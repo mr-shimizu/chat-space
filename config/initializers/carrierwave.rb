@@ -14,5 +14,3 @@ CarrierWave.configure do |config|
   config.fog_directory  = 'bucket-name-upload-test'
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/bucket-name-upload-test'
 end
-
-https://s3.console.aws.amazon.com/s3/buckets/bucket-name-upload-test/?region=ap-northeast-1&tab=overview
